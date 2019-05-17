@@ -1,0 +1,20 @@
+<div>
+  <header>
+    <form [formGroup]="searchform" (ngSubmit)="onSubmit()">
+        <mat-form-field class="example-full-width">
+          <input 
+            type="search" 
+            q="githubsearch" 
+            id="search" 
+            matInput
+            placeholder="Insert Github username..." 
+            formControlName="search" > 
+        </mat-form-field>
+      <button type="submit" [disabled]="!searchform.valid" mat-raised-button color="primary">SEARCH</button>
+      <p *ngIf="searchform.controls.search.invalid && searchform.controls.search.touched" class="alert-message">searchkey is required</p>
+    </form>
+  </header>
+  <div class="container">
+    <app-users-list></app-users-list>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, 
+    "Helvetica Neue", sans-serif;
+    background: rgb(205,204,223);
+    background: linear-gradient(90deg, rgba(205,204,223,1) 0%, rgba(244,249,250,1) 100%); 
+}
+.mat-form-field-empty.mat-form-field-label {
+    color: grey;
+}
+.my-form-field.mat-form-field-appearance-legacy .mat-form-field-underline,
+.my-form-field.mat-form-field-appearance-legacy .mat-form-field-ripple,
+.my-form-field.mat-form-field-appearance-legacy.mat-focused
+    .mat-form-field-underline,
+.my-form-field.mat-form-field-appearance-legacy.mat-focused
+    .mat-form-field-ripple {
+    background-color: black !important;
+}
+ raised-button.mat-primary[disabled], 
+.mat-raised-button.mat-warn[disabled], 
+.mat-raised-button[disabled][disabled] {
+    background-color: rgba(240,240,240,.8);
+}
+raised-button.mat-primary[disabled], 
+.mat-raised-button.mat-warn[disabled], 
+.mat-raised-button[disabled][disabled] {
+    color: #b39ddb;
+}
+header {
+    min-height: 92px;
+    background-color: #d1c4e9;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.container {
+    max-width: 920px;
+    margin: auto;
+}
+.results-disclaimer {
+    margin-top: 20px;
+    text-align: center;
+    color: #7b1fa2;
+    min-height: 25px;
+    display: block;
+}
+.spinner-box {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+.loader {
+    margin: 20px auto;
+    border: 12px solid #f3f3f3; /* Light grey */
+    border-top: 12px solid #7b1fa2; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

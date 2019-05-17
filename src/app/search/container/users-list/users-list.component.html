@@ -1,0 +1,31 @@
+<p class="results-disclaimer"  *ngIf="(foundUsers | async).count; else noResults">
+    You have <strong>{{(foundUsers | async).count}}</strong> results :)
+</p>
+<mat-grid-list cols="4" rowHeight="300px">
+  <mat-grid-tile *ngFor="let user of (foundUsers | async).users">
+      <mat-card class="example-card">
+          <mat-card-header>
+          </mat-card-header>
+          <img src="{{user.avatar_url}}">
+          <mat-card-content>
+            <p>
+                {{user.login}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button [routerLink]="['/'+user.login, 'repos']" mat-raised-button color="primary">See repos</button>
+          </mat-card-actions>
+        </mat-card>
+  </mat-grid-tile>
+
+  <ng-template #noResults>
+    <p class="results-disclaimer">
+      You have not used our search engine yet :(
+    </p>    
+  </ng-template>
+</mat-grid-list>
+
+<span *ngIf="(foundUsers | async).loading" class="spinner-box">
+    <div class="loader"></div>
+</span>
+

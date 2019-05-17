@@ -1,0 +1,12 @@
+<mat-grid-list cols="4" rowHeight="300px">
+    <div *ngFor="let repo of (foundRepos | async).repos" class="grid-item">
+        <p>{{repo.name}}</p>
+        <a href="{{repo.html_url}}" target="_blank" mat-raised-button color="primary">
+            external link
+        </a>
+    </div> 
+</mat-grid-list>
+
+<span *ngIf="(foundRepos | async).loading">
+    <div class="loader"></div>
+</span>
