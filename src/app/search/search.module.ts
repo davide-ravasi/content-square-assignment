@@ -10,7 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from '../app-routing.module';
 import { SearchContainerComponent } from './container/search-container.component';
-import { UsersListComponent } from './container/users-list/users-list.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
 
 @NgModule({
   declarations: [SearchContainerComponent, UsersListComponent],

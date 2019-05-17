@@ -19,7 +19,7 @@ export class ReposComponent implements OnInit {
 
   constructor(
       private githubReposService: GithubReposService,
-      private store: Store<fromSearchRepos.ReposState>,
+      private store: Store<fromSearchRepos.StateRepos>,
       private activatedRoute: ActivatedRoute
     ) { }
 
@@ -32,11 +32,17 @@ export class ReposComponent implements OnInit {
 
     this.store.dispatch( new SearchRepos(0, true, []));
 
+    this.githubReposService.getUsersPhoto(this.reposUser)
+      .subscribe(
+        (data) => {
+          this.userPhoto = data.avatar_url;
+      }
+    );
+
     this.githubReposService.searchRepos(this.reposUser)
       .subscribe(
         (data) => {
           this.repos = data;
-          this.userPhoto = this.repos[0].owner.avatar_url;
           this.totalCount = data ? data.length : 0;
           this.store.dispatch( new SearchRepos(this.totalCount, false, this.repos));
         }

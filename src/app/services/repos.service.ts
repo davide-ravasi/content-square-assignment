@@ -16,4 +16,10 @@ export class GithubReposService {
         return res.json() || []
       });
   }
+  getUsersPhoto(queryName: string): Observable<any> {
+    return this.http.get(`${this.API_PATH}/${queryName}`)
+      .map((res) => {
+        return res.json();
+      });
+  }
 }

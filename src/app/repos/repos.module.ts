@@ -7,7 +7,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from '../app-routing.module';
-import { ReposListComponent } from './container/repos-list/repos-list.component';
+import { ReposListComponent } from './components/repos-list/repos-list.component';
 
 @NgModule({
   declarations: [ReposListComponent],
