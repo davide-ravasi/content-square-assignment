@@ -12,10 +12,10 @@ import * as fromSearchRepos from '../store/search-repos.reducer';
   styleUrls: ['./repos.component.scss']
 })
 export class ReposComponent implements OnInit {
-  totalCount: number;
-  repos: [];
-  reposUser: string;
-  userPhoto: string;
+  public totalCount: number;
+  public repos: [];
+  public reposUser: string;
+  public userPhoto: string;
 
   constructor(
       private githubReposService: GithubReposService,
