@@ -5,8 +5,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MatButtonModule, MatInputModule } from '@angular/material';
+import { StoreModule } from '@ngrx/store';
 
-import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchModule } from './search/search.module';
@@ -28,12 +28,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     SearchModule,
     ReposModule,
-    CoreModule,
     FormsModule,
     MatButtonModule,
     MatInputModule,
     ReactiveFormsModule,
     HttpModule,
+    StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
         maxAge: 25, // Retains last 25 states

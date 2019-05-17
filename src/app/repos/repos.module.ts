@@ -5,9 +5,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from '../app-routing.module';
 import { ReposListComponent } from './components/repos-list/repos-list.component';
+import { searchReposReducer } from './store/search-repos.reducer';
 
 @NgModule({
   declarations: [ReposListComponent],
@@ -19,10 +21,12 @@ import { ReposListComponent } from './components/repos-list/repos-list.component
     MatButtonModule,
     MatDividerModule,
     MatGridListModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    StoreModule.forFeature('searchReposList', searchReposReducer),
   ],
   exports: [
-      ReposListComponent
+      ReposListComponent,
+      StoreModule
   ]
 })
 export class ReposModule { }
