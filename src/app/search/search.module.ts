@@ -7,10 +7,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
-
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from '../app-routing.module';
 import { SearchContainerComponent } from './container/search-container.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
+import { searchUserReducer } from './store/search-user.reducer';
 
 @NgModule({
   declarations: [SearchContainerComponent, UsersListComponent],
@@ -24,11 +25,13 @@ import { UsersListComponent } from './components/users-list/users-list.component
     MatDividerModule,
     MatGridListModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    StoreModule.forFeature('searchUserList', searchUserReducer),
   ],
   exports: [
     SearchContainerComponent,
-    UsersListComponent
+    UsersListComponent,
+    StoreModule
   ]
 })
 export class SearchModule { }

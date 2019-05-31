@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { GithubReposService } from '../../services/repos.service';
 import { SearchRepos } from '../store/search-repos.actions';
-import * as fromSearchRepos from '../store/search-repos.reducer';
+import * as fromAppStore from '../../store/app.reducers';
 
 @Component({
   selector: 'app-repos',
@@ -19,7 +19,7 @@ export class ReposComponent implements OnInit {
 
   constructor(
       private githubReposService: GithubReposService,
-      private store: Store<fromSearchRepos.StateRepos>,
+      private store: Store<fromAppStore.AppState>,
       private activatedRoute: ActivatedRoute
     ) { }
 
