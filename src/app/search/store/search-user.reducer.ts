@@ -2,10 +2,6 @@ import * as SearchUserActions from './search-user.actions';
 
 export const SEARCH_USER = 'SEARCH_USER';
 
-export interface AppState {
-    usersList: State;
-}
-
 export interface State {
     count: number;
     loading: boolean;

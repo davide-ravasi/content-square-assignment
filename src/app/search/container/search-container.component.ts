@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { GithubUsersService } from '../../services/users.service';
 import {SearchUser} from '../store/search-user.actions';
-import * as fromSearchUser from '../store/search-user.reducer';
+import * as fromAppStore from '../../store/app.reducers';
 
 @Component({
   selector: 'app-search-container',
@@ -19,7 +19,7 @@ export class SearchContainerComponent implements OnInit {
 
   constructor(
       private githubUsersService: GithubUsersService,
-      private store: Store<fromSearchUser.AppState>
+      private store: Store<fromAppStore.AppState>
       ) { }
 
   ngOnInit() {
