@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 
 import { GithubUsersService } from '../../services/users.service';
-import {SearchUser} from '../store/search-user.actions';
+import * as userActions from '../store/search-user.actions';
 import * as fromAppStore from '../../store/app.reducers';
 
 @Component({
@@ -29,21 +29,18 @@ export class SearchContainerComponent implements OnInit {
       search: new FormControl('', [
         Validators.required
     ])});
-
-    // init store with empty array
-    this.store.dispatch( new SearchUser(0, false, false, []));
   }
 
   onSubmit() {
     this.searchQuery = this.searchform.value.search;
-    this.store.dispatch( new SearchUser(0, false, true, []));
+    this.store.dispatch( new userActions.StartLoading());
 
     this.githubUsersService.searchUsers(this.searchQuery)
       .subscribe(
         (data) => {
           this.items = data.items;
           this.totalCount = data.items.length;
-          this.store.dispatch( new SearchUser(this.totalCount, true, false, this.items));
+          this.store.dispatch( new userActions.SearchUser(this.totalCount, true, false, this.items));
         },
         (error) => {
           this.router.navigate(['/404']);

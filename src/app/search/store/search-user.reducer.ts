@@ -16,6 +16,12 @@ const initialState = {
 
 export function searchUserReducer( state = initialState, action: SearchUserActions.SearchUserActions) {
     switch (action.type) {
+        case SearchUserActions.START_LOADING:
+        return {
+            ...state,
+            loading: true,
+            users: []
+        };
         case SearchUserActions.SEARCH_USER:
             return {
                 ...state,
