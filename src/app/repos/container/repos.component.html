@@ -1,9 +1,6 @@
 <header>
   <button [routerLink]="['/']" mat-raised-button color="primary" >< Back to search engine</button>
-  <div class="user-block">
-    <img src="{{userPhoto}}" />
-    <p><strong>{{reposUser}}</strong></p>
-  </div>
+  <app-user-data></app-user-data>
 </header>
 <p class="results-disclaimer">the user <strong>{{reposUser}}</strong> has <strong>{{totalCount}}</strong> repositories</p>
 <div class="container">

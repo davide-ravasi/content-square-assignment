@@ -10,9 +10,10 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from '../app-routing.module';
 import { ReposListComponent } from './components/repos-list/repos-list.component';
 import { searchReposReducer } from './store/search-repos.reducer';
+import { UserDataComponent } from './components/user-data/user-data.component';
 
 @NgModule({
-  declarations: [ReposListComponent],
+  declarations: [ReposListComponent, UserDataComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -26,6 +27,7 @@ import { searchReposReducer } from './store/search-repos.reducer';
   ],
   exports: [
       ReposListComponent,
+      UserDataComponent,
       StoreModule
   ]
 })
