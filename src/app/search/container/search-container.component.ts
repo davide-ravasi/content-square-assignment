@@ -29,6 +29,10 @@ export class SearchContainerComponent implements OnInit {
       search: new FormControl('', [
         Validators.required
     ])});
+
+
+    // init store with empty array
+    this.store.dispatch( new userActions.SearchUser(0, false, false, []));
   }
 
   onSubmit() {
