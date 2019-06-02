@@ -8,7 +8,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   { path: '', component: SearchContainerComponent },
   { path: ':user/repos', component: ReposComponent },
-  { path: '**', component: PageNotFoundComponent }
+  {path: '404', component: PageNotFoundComponent},
+  { path: '**', redirectTo: '/404' }
 ];
 
 @NgModule({

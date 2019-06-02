@@ -1,15 +1,15 @@
 import * as SearchUserActions from './search-user.actions';
 
-export const SEARCH_USER = 'SEARCH_USER';
-
 export interface State {
     count: number;
+    endSearch: boolean;
     loading: boolean;
     users: [];
 }
 
 const initialState = {
   count: 0,
+  endSearch: false,
   loading: false,
   users: []
 };
@@ -20,6 +20,7 @@ export function searchUserReducer( state = initialState, action: SearchUserActio
             return {
                 ...state,
                 count: action.countUsers,
+                endSearch: action.endSearch,
                 loading: action.loading,
                 users: action.searchUsers
             };

@@ -1,7 +1,5 @@
 import * as SearchReposActions from './search-repos.actions';
 
-export const SEARCH_REPOS = 'SEARCH_REPOS';
-
 export interface State {
     repos: [];
 }

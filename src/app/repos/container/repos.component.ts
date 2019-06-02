@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Store } from '@ngrx/store';
 
 import { GithubReposService } from '../../services/repos.service';
@@ -20,6 +20,7 @@ export class ReposComponent implements OnInit {
   constructor(
       private githubReposService: GithubReposService,
       private store: Store<fromAppStore.AppState>,
+      private router: Router,
       private activatedRoute: ActivatedRoute
     ) { }
 
@@ -45,6 +46,9 @@ export class ReposComponent implements OnInit {
           this.repos = data;
           this.totalCount = data ? data.length : 0;
           this.store.dispatch( new SearchRepos(this.totalCount, false, this.repos));
+        },
+        (error) => {
+          this.router.navigate(['/404']);
         }
     );
   }

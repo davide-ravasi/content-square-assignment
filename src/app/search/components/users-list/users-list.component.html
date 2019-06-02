@@ -19,10 +19,20 @@
   </mat-grid-tile>
 
   <ng-template #noResults>
-    <p class="results-disclaimer">
-      You have not used our search engine yet :(
-    </p>    
+    <ng-container *ngIf="!(foundUsers | async).endSearch;else noResultsWithSearch">
+        <p class="results-disclaimer">
+            You have not used our search engine yet :(
+        </p>    
+    </ng-container>
   </ng-template>
+
+  <ng-template #noResultsWithSearch>
+      <p class="results-disclaimer">
+          No results for this search key :( <br/>
+          Try again :)
+      </p>    
+  </ng-template>
+
 </mat-grid-list>
 
 <span *ngIf="(foundUsers | async).loading" class="spinner-box">
