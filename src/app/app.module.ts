@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { EffectsModule } from '@ngrx/effects';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MatButtonModule, MatInputModule } from '@angular/material';
+import { MatButtonModule} from '@angular/material';
 import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,13 +27,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     SearchModule,
     ReposModule,
-    FormsModule,
     MatButtonModule,
-    MatInputModule,
     ReactiveFormsModule,
     HttpModule,
     StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
         maxAge: 25, // Retains last 25 states
       }),

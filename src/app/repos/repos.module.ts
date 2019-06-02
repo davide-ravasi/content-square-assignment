@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from '../app-routing.module';
@@ -16,13 +13,9 @@ import { UserDataComponent } from './components/user-data/user-data.component';
   declarations: [ReposListComponent, UserDataComponent],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     AppRoutingModule,
     MatButtonModule,
-    MatDividerModule,
     MatGridListModule,
-    MatProgressSpinnerModule,
     StoreModule.forFeature('searchReposList', searchReposReducer),
   ],
   exports: [
